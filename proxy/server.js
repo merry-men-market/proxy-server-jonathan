@@ -22,7 +22,7 @@ app.use('/stocks/:id', express.static(path.join(__dirname, 'public')));
 
 app.get('/api/stocks/:id', (req, res) => {
   // http://13.57.217.200:3001/api/hostels/5
-  axios.get(`http://localhost:8080/api/stocks/${req.params.id}`)
+  axios.get(`http://ec2-54-67-90-106.us-west-1.compute.amazonaws.com:8080/api/stocks/${req.params.id}`)
     .then(function (response) {
       res.status(200).send(response.data);
     })
